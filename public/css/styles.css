@@ -1,0 +1,20 @@
+.result-card:hover{
+ 
+    color: blue;
+}
+.btn-cl{
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 30px;
+   
+}
+.cart-card{
+    
+    border-radius: 7px;
+    padding-top: 20px;
+    
+    justify-content: center;
+    align-items: center;
+    
+    
+}

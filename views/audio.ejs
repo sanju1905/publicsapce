@@ -1,0 +1,37 @@
+<!-- Add Bootstrap CSS link in your head if you haven't already -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .result-card {
+    border: 2px solid;
+    border-radius: 7px;
+    transition: transform 0.3s ease-in-out;
+  }
+</style>
+
+<div class="container">
+
+  <div class="row">
+    <% insta.forEach((question, index) => { %>
+      <% if (question.audio) { %>
+        <div class="col-md-6 mb-3">
+          <div class="result-card mt-4 p-3 shadow">
+            <div class="card-body">
+              <h2 class="card-title text-primary"><i class="bi bi-person text-success"></i>: <%= question.name %></h2>
+
+              <div class="mt-4">
+                <audio controls class="w-100">
+                  <source src="<%= question.audio %>" type="audio/mp3">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+             
+            </div>
+          </div>
+        </div>
+      <% } %>
+    <% }); %>
+  </div>
+
+</div>

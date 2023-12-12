@@ -1,0 +1,39 @@
+<!-- Add Bootstrap CSS link in your head if you haven't already -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .result-card {
+    border: 2px solid;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 7px;
+  }
+</style>
+
+<div class="container">
+
+  <div class="row">
+    <% insta.forEach((question, index) => { %>
+      <% if (question.video) { %>
+        <div class="col-md-6 mb-3">
+          <div class="result-card mt-4 p-3 shadow">
+            <div class="card-body">
+              <h2 class="card-title text-primary"><i class="bi bi-person text-success"></i>: <%= question.name %></h2>
+
+              <div class="mt-4">
+                <!-- Use Bootstrap's embed-responsive class for responsive video embedding -->
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="<%= question.video %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      <% }  %>
+    <% }); %>
+  </div>
+
+</div>
